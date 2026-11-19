@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Credit Risk Prediction</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header><p class="eyebrow">APPLIED MACHINE LEARNING · ASSIGNMENT 10.5</p><h1>Credit Risk Prediction</h1><p>Explore a random forest trained on the UCI credit-card default dataset.</p></header>
+<section class="intro"><strong>Educational demonstration</strong><p>The model estimates next-month default from historical Taiwanese accounts. It has not been validated for current lending decisions. Use fictional inputs.</p><p>Predictions run in your browser. This application does not send the entered values to a prediction server.</p></section>
+<div id="status" role="status">Loading the trained model…</div>
+<form id="form" hidden><div class="toolbar"><button type="button" id="example">Load fictional example</button><span>Amounts in New Taiwan dollars (NT$)</span></div>
+<div id="fields"></div><button id="submit" type="submit">Calculate prediction</button></form>
+<section id="result" hidden aria-live="polite"><h2>Model output</h2><p id="score"></p><p id="flag"></p><p>A 0.50 cutoff is used for consistency with Assignment 8.6. The score has not undergone a separate calibration study.</p></section>
+<details><summary>Model and evaluation</summary><p>150 trees · maximum depth 12 · minimum leaf size 5 · square-root feature sampling · seed 20.</p><p id="metrics"></p><p>Held-out evaluation uses the same 6,000 clients as Assignment 8.6. At threshold 0.50, the model detects about 35% of observed defaults.</p><p>Education codes 0, 5, and 6 map to 4. Marriage code 0 maps to 3. Nine categorical predictors are one-hot encoded and fourteen numeric predictors are unscaled.</p><p id="version"></p></details>
+<footer><p>Aidana Kadylkhan · Credit Risk Prediction</p><a href="https://doi.org/10.24432/C55S3H" target="_blank" rel="noopener">Yeh (2009), UCI dataset</a></footer>
+</main>
+<script type="module" src="app.mjs"></script>
+</body></html>
